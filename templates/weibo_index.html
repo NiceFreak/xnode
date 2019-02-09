@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{user.username}} 的微博</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/weibo.css">
+</head>
+<body>
+    <div class="title">{{user.username}} 的微博</div>
+    <div class="nav">
+        <a class="btn-write pure-button pure-button-primary" href="/weibo/new">写新微博</a>
+        <a class="btn-write pure-button button-success" href="/weibo/all">微博广场</a>
+        <a class="pure-button" href="/">回到首页</a>
+    </div>
+    <div class="content-main">
+        {% for w in weibos  %}
+            <div class="wb-item">
+                <div class="wb-text">
+                    {{ w.content }}
+                    <div class="wb-author">
+                        from {{ user.username }}
+                    </div>
+                </div>
+                {% if me.id === user.id %}
+                    <div class="button">
+                        <a class="btn" href="/weibo/delete?id={{ w.id }}">删除</a>
+                        <a class="btn" href="/weibo/edit?id={{ w.id }}">修改</a>
+                    </div>
+                {% endif %}
+                {#w.comments() 拿到当前微博下的所有评论#}
+                <div class="wb-comments">
+                    {% for c in w.comments() %}
+                    <div class="comment">
+                        {{ c.user().username }}: {{ c.content }}
+                    </div>
+                    {% endfor %}
+                    <form class="pure-form" action="/comment/add" method="post">
+                        <input type="hidden" name="weibo_id" value="{{ w.id }}">
+                        <input type="text" name="content">
+                        <button class="pure-button" type="submit">添加评论</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

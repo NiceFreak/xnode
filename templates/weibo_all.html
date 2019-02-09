@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/weibo.css">
+</head>
+<body>
+    <div class="nav">
+        <a class="btn-write pure-button pure-button-primary" href="/weibo/new">写新微博</a>
+        <a class="btn-write pure-button button-success" href="/weibo/index?user_id={{user.id}}">我的微博</a>
+        <a class="pure-button" href="/">回到首页</a>
+    </div>
+    <div class="content-main">
+        {% for w in weibos  %}
+            <div class="wb-item">
+                <div class="wb-text">
+                    {{ w.content }}
+                    <div class="wb-author">
+                        from {{ w.user().username }}
+                    </div>
+                </div>
+                <div class="wb-comments">
+                    {% for c in w.comments() %}
+                    <div class="comment">
+                        {{ c.user().username }}: {{ c.content }}
+                    </div>
+                    {% endfor %}
+                    <form class="pure-form" action="/comment/addv2" method="post">
+                        <input type="hidden" name="weibo_id" value="{{ w.id }}">
+                        <input type="text" name="content">
+                        <button class="pure-button" type="submit">添加评论</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

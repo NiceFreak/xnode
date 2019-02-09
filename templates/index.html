@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XNode</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/index.css">
+</head>
+<body>
+    <div class="pure-menu pure-menu-horizontal top">
+        <div class="left">
+            <a class="pure-menu-heading pure-menu-link">欢迎 {{username}}</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="/message">留言板</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="/todo">待办</a>
+                </li>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="/weibo/index?user_id={{id}}">微博</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    {% if id %}
+                        <a class="pure-menu-link" href="/profile">{{username}}</a>
+                    {% else %}
+                        <a class="pure-menu-link" href="/login">登录</a>
+                    {% endif %}
+                </li>
+                <li class="pure-menu-item">
+                    <a class="pure-menu-link" href="/register">注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg"></div>
+    <div class="content-main">
+        XNode
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待办清单</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+</head>
+<body>
+    <div class="back">《 回到首页</div>
+    <div class="title">待办清单</div>
+    <form class="pure-form" action="/todo/add" method="post">
+        <fieldset class="pure-group">
+            <input class="pure-input-1-2" type="text" name="title" placeholder="请输入todo">
+        </fieldset>
+        <button class="pure-button pure-input-1-2 pure-button-primary" type="submit">添加</button>
+    </form>
+    <div class="todos">
+    {% for t in todos %}
+        <div class="pure-g todo">
+            <div class="pure-u-15-24 todo-text">
+                {{ t.id }}. {{ t.title }}
+            </div>
+            <a class="pure-u-4-24 btn-common edit" href="/todo/edit?id={{ t.id }}">编辑</a>
+            <a class="pure-u-4-24 btn-common del" href="/todo/delete?id={{ t.id }}">删除</a>
+        </div>
+    {% endfor %}
+    </div>
+    <script src="static?file=js/toolbox.js"></script>
+    <script>
+        var btn = e('.back')
+        btn.addEventListener('click', () => {
+            back()
+        })
+    </script>
+</body>
+</html>

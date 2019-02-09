@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>编辑微博</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+    <style>
+        .edit-weibo {
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/weibo/update" method="post" class="pure-form edit-weibo">
+        <input type="hidden" name="id" value="{{weibo.id}}">
+        <input type="hidden" name="user_id" value="{{weibo.user_id}}">
+        <input type="text" name="content" value="{{weibo.content}}">
+        <button type="submit" class="pure-button pure-button-primary">修改微博</button>
+    </form>
+</body>
+</html>

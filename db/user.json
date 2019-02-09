@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "03f08925699328c6c5be8ce9c5606fff6f5a6b04",
+    "group": "admin"
+  },
+  {
+    "id": 2,
+    "username": "lixiao",
+    "password": "03f08925699328c6c5be8ce9c5606fff6f5a6b04",
+    "group": "admin"
+  }
+]

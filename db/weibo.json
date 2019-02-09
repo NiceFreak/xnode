@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "content": "test",
+    "user_id": 1
+  },
+  {
+    "id": 2,
+    "content": "测试",
+    "user_id": 2
+  }
+]

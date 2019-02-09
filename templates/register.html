@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+</head>
+<body>
+    <div class="title">注册</div>
+    <form class="pure-form" action="/register" method="post">
+        <fieldset class="pure-group">
+            <input class="pure-input-1-2" type="text" name="username" placeholder="username">
+            <input class="pure-input-1-2" type="text" name="password" placeholder="password">
+            <input class="pure-input-1-2" type="text" name="group" placeholder="group">
+        </fieldset>
+        <button class="pure-button pure-input-1-2 pure-button-primary" type="submit">注册</button>
+    </form>
+    <p>
+        {{result}}
+        {% if result === '注册成功' %}
+            <a class="home" href="/">回到首页</a>
+        {% endif %}
+    </p>
+    {% for u in users %}
+        <div>
+            <span>{{ u.id }}</span>
+            <span>{{ u.username }}</span>
+            <span>{{ u.password }}</span>
+            <span>{{ u.group }}</span>
+        </div>
+    {% endfor %}
+</body>
+</html>

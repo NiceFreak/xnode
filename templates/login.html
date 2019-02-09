@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+</head>
+<body>
+    <div class="title">登录</div>
+    <div class="title subtitle">你好 {{username}}</div>
+    <form class="pure-form" action="/login" method="post">
+        <fieldset class="pure-group">
+            <input class="pure-input-1-2" type="text" name="username" placeholder="username">
+            <input class="pure-input-1-2" type="password" name="password" placeholder="password">
+        </fieldset>
+        <button class="pure-button pure-input-1-2 pure-button-primary" type="submit">登录</button>
+    </form>
+    <p>
+        {{result}}
+        {% if result === '登录成功' %}
+            <a class="home" href="/">回到首页</a>
+        {% endif %}
+    </p>
+</body>
+</html>

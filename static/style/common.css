@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+input, textarea {
+    margin: 0 auto !important;
+}
+
+.messages, .todos {
+    width: 50%;
+    text-align: start;
+    margin: 20px auto;
+    font-weight: normal;
+}
+
+.todo {
+    height: 40px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.todo-text {
+    font-weight: normal !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.btn-common {
+    line-height: 40px;
+    text-align: center;
+    background: #E6E6E6;
+    border-radius: 2px;
+    color: #000;
+}
+
+.btn-common:hover {
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+
+.btn-common:visited {
+    color: #000;
+}
+
+.del {
+    background: rgb(202, 60, 60);
+    color: #fff;
+}
+
+.del:visited {
+    color: #fff;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    cursor: default;
+}
+
+.home {
+    display: block;
+}

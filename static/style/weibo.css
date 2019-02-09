@@ -1,0 +1,58 @@
+.title {
+    font-weight: bolder;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+    color: #fff;
+}
+
+.button-success:visited {
+    color: #fff;
+}
+
+.btn-write {
+    margin-bottom: 10px;
+}
+
+.content-main {
+    padding-left: 200px;
+    padding-right: 20px;
+    margin-top: 20px;
+    width: 1000px;
+}
+
+.wb-text {
+    font-weight: normal;
+}
+
+.wb-author {
+    text-align: right;
+    font-style: italic;
+}
+
+.wb-item {
+    margin-bottom: 20px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.button {
+    text-align: right;
+}
+
+.pure-form {
+    text-align: right;
+}

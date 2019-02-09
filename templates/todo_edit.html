@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+    <style>
+        .edit-todo {
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/todo/update" method="post" class="pure-form edit-todo">
+        <fieldset>
+            <input type="hidden" name="id" value="{{todo.id}}">
+            <input type="text" name="title" value="{{todo.title}}" placeholder="请输入todo">
+            <button type="submit" class="pure-button pure-button-primary">修改</button>
+        </fieldset>
+    </form>
+</body>
+</html>

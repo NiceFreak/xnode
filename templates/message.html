@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <link href="https://www.purecss.cn/css/pure-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.purecss.cn/css/baby-blue.css">
+    <link rel="stylesheet" type="text/css" href="/static?file=style/common.css">
+</head>
+<body>
+    <div class="back">《 回到首页</div>
+    <div class="title">留言板</div>
+    <form class="pure-form" action="/message" method="post">
+        <fieldset class="pure-group">
+            <input class="pure-input-1-2" type="text" placeholder="用户名" name="author">
+            <textarea class="pure-input-1-2" name="message" placeholder="请输入想要写下的内容" rows="8" cols="40"></textarea>
+        </fieldset>
+        <button class="pure-button pure-input-1-2 pure-button-primary" type="submit">提交</button>
+    </form>
+    <div class="messages">
+        messages:
+        {% for m in messages %}
+            <div class="message">{{ m.author }}: {{ m.message }}</div>
+        {% endfor %}
+    </div>
+    <script src="static?file=js/toolbox.js"></script>
+    <script>
+        var btn = e('.back')
+        btn.addEventListener('click', () => {
+            back()
+        })
+    </script>
+</body>
+</html>
